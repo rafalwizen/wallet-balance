@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
+import java.util.Collections;
 
 
 @RestController
@@ -23,7 +23,7 @@ public class CurrenciesController {
         RestTemplate restTemplate = new RestTemplate();
         String url = "https://rest.coinapi.io/v1/exchangerate/" + firstCurrency + "/" + secondCurrency + "/?invert=true&output_format=json";
         HttpHeaders headers = new HttpHeaders();
-        headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+        headers.setAccept(Collections.singletonList(MediaType.APPLICATION_JSON));
         headers.add("X-CoinAPI-Key", apiKey);
         HttpEntity <String> entity = new HttpEntity<>(headers);
 
