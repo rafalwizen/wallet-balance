@@ -2,7 +2,7 @@ package com.wizen.rafal.walletbalance.dao;
 
 import java.util.List;
 
-import javax.persistence.EntityManager;
+import jakarta.persistence.EntityManager;
 
 import com.wizen.rafal.walletbalance.entity.Asset;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public class AssetDAOImpl implements AssetDAO {
 
-    private final EntityManager entityManager;
+    private EntityManager entityManager;
 
     @Autowired
     public AssetDAOImpl(EntityManager entityManager) {
