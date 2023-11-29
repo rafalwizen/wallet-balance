@@ -13,7 +13,7 @@ import java.util.Collections;
 
 @RestController
 @RequestMapping("/currencies")
-public class CurrenciesController {
+public class CurrencyController {
 
     @Value( "${X-CoinAPI-Key}" )
     private String apiKey;
