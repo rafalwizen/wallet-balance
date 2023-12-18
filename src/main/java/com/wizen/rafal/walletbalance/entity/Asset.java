@@ -1,12 +1,17 @@
 package com.wizen.rafal.walletbalance.entity;
 
+import com.wizen.rafal.walletbalance.enums.FiatCurrency;
 import lombok.Getter;
 import lombok.Setter;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+import java.util.Currency;
+import java.util.Date;
+
 @Entity
-@Table(name="CURRENCY")
+@Table(name="ASSET")
 @Getter
 @Setter
 public class Asset {
@@ -15,7 +20,10 @@ public class Asset {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private Date paymentDate;
 
+    private FiatCurrency currencyUsedForPayment;
+
+    private BigDecimal valuePaid;
 }
 

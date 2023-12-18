@@ -7,16 +7,12 @@ CREATE TABLE `wallet_balance_directory`.`wallet` (
   PRIMARY KEY (`id`)
 );
   
-  
-CREATE TABLE `wallet_balance_directory`.`currency` (
+CREATE TABLE `wallet_balance_directory`.`asset` (
   `id` INT NOT NULL,
-  `name` VARCHAR(45) NULL,
+  `payment_date` DATETIME NOT NULL,
+  `currency_used_for_payment` VARCHAR(7) NOT NULL,
+  `value_paid` DECIMAL(10,2) NOT NULL,
   `walletId` INT NOT NULL,
   PRIMARY KEY (`id`),
   FOREIGN KEY (`walletId`) REFERENCES wallet(`id`)
 );
-
-insert into wallet_balance_directory.wallet values (1, 'Rafal', 'Rafal');
-
-insert into wallet_balance_directory.currency values (1, "BTC", 1);
-insert into wallet_balance_directory.currency values (2, "ETH", 1);
